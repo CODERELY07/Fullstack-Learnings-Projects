@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+<body>
+
+    <script>
+        // Demonstrating closure in JavaScript: 
+        // A function retains access to variables defined in its lexical scope even after the outer function has finished executing.
+        
+        // Example:
+        let myName = 'Mark'; // Define a global variable `myName`.
+
+        function printName() {
+            console.log(myName); // Function accesses `myName` from its lexical scope.
+        }
+
+        myName = 'Joey'; // Update the value of `myName`.
+
+        printName(); // Outputs: Joey
+
+        myName = 'Ely'; // Update the value of `myName` again.
+
+        printName(); // Outputs: Ely
+
+        function outerFunction(outerVariable){
+            const outer2 = 'hi'; // Variable declared in the outer function scope.
+            return function innerFunction(innerVariable){
+                // innerFunction is a closure because it retains access to `outerVariable` and `outer2`
+                console.log('Outer Variable: ' + outerVariable); // Accesses `outerVariable` from the outer function scope.
+                console.log('Inner Variable: ' + innerVariable); // Accesses `innerVariable` from its own scope.
+                console.log(outer2); // Accesses `outer2` from the outer function scope.
+            }
+        }
+
+        const newFunction = outerFunction('outside'); // Creates an instance of `innerFunction` with `outerVariable` set to 'outside'.
+        newFunction('inner'); // Calls `innerFunction` with `innerVariable` set to 'inner'.
+
+    </script>
+</body>
+</html>

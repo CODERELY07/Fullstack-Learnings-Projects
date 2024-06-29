@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference Vs Value</title>
+</head>
+<body>
+
+    <script>
+        let a2 = 10
+        let b2 = 20
+        let c2 = a2
+        c2++;
+        console.log(a2);
+        console.log(c2);
+
+        //the a2 is not affected by c2 because its not reference,
+        //the c2 is only copy the value of a2 then it doesn't affect the a2 variable
+        let a = 10
+        let b = 20
+        let c = [1, 2]
+        let d = c
+        d.push(3);
+
+        console.log(c)
+        console.log(d)
+        // As you can see both c and d reference the same place in memory. This is because to get the value for a variable you take the thing on the right side of the equal sign and gets its value and set that value as the value of the new variable. In our case the value of c is 0x01 so the value of d is also set to 0x01 which means c and d point to the same memory address.
+
+        // If we change c then we also change d at the same time since they are linked to the same memory.
+
+        //identical arrays are not equal
+        let a3 = [1, 2]
+        let b3 = [1, 2]
+        console.log(a3 === b3)
+        // false ,Even though a and b have arrays with the same numbers in them they are separate from one another since these arrays have different locations in memory where they are stored. Whenever you create a new array or object it will be stored in a brand new memory address. This is why a and b point to different memory addresses.
+
+
+        let a4 = [1, 2]
+        let b4 = a4
+        console.log(a4 === b4);
+        // true,Now that we set b equal to a we made sure that they reference the same memory address and now they have the same value.\
+
+
+        //pushing array function
+
+        const arr = [2,3,5];
+        console.log(arr);
+        function pushElement(array,elem){
+            array.push(elem);
+        }
+
+        pushElement(arr,34)
+        console.log(arr);
+    </script>
+</body>
+</html>

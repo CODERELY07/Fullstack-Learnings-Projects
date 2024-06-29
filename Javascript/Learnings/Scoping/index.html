@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- The following script tag uses module scope by using type="module" -->
+    <!-- Module scope ensures variables are only accessible within the script file -->
+    <!-- Without using module, variables in scripts are accessible globally -->
+    <script src="script.js" type="module"></script>
+</head>
+<body>
+
+    <script>
+        // output the script module
+        //try the remove the type="module"
+        // console.log(a);
+
+
+        // Global scope variable
+        var globalVar = 'I am global';
+
+        function greet() {
+            console.log(globalVar); // Accessible within functions
+        }
+
+        greet();
+        console.log(globalVar); // Accessible outside functions
+
+        function blockScopeExample() {
+            if (true) {
+                let message = 'Hello'; // Block scoped variable
+                console.log(message); // Accessible within the block
+            }
+            // console.log(message); // Error: message is not defined outside the block
+        }
+        blockScopeExample();
+
+
+        function functionScopeExample() {
+            var localVar = 'I am local';
+            console.log(localVar); // Accessible within the function
+
+            // Nested function
+            function innerFunction() {
+                console.log(localVar); // Accessible within the inner function
+            }
+
+            innerFunction();
+            // console.log(localVar); // Error: localVar is not defined outside the function
+        }
+        functionScopeExample();
+
+    </script>
+
+</body>
+</html>

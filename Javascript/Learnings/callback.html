@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       // Executes console.log('hi') after 2000 milliseconds (2 seconds)
+       setTimeout(() => {
+         console.log('hi');
+       }, 2000);
+
+       // Defines a function setTime that logs 'hello world'
+       function setTime() {
+          console.log('hello world');
+       }
+
+       // Calls setTime function after 5000 milliseconds (5 seconds)
+       // In this case, we pass the function definition directly
+       setTimeout(setTime, 5000);
+
+       // Defines a function setTimeTwo that returns another function
+       function setTimeTwo() {
+        // Returns a function that logs 'hello world'
+        return () => console.log('hello world');
+       }
+
+       // Calls setTimeTwo function after 6000 milliseconds (6 seconds)
+       // In this case, we call setTimeTwo and it returns a function, which is then passed to setTimeout
+       setTimeout(setTimeTwo(), 6000);
+    </script>
+</body>
+</html>

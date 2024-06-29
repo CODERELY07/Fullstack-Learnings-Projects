@@ -1,0 +1,15 @@
+<script>
+  // hoisting is the mechanism that allows you to define a function at the bottom of your file yet still use it at the top of the file before it is defined.
+  log("hello");
+
+  function log(text) {
+    console.log(text);
+  }
+
+  hello("hello");
+
+  const hello = (text) => {
+    console.log(text);
+  };
+  // The above code will throw an error since arrow functions are not hoisted. The reason for this is actually pretty simple. JavaScript does not hoist const/let variables and since an arrow function must be defined as a variable it will not be hoisted to the top of your file.
+</script>
