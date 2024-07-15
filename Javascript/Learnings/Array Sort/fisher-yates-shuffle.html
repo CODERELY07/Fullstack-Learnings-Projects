@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arr = ["hi", "Hello", "Sup", "How are  you"];
+
+      console.log(fishYates(arr));
+
+      function fishYates(arrs) {
+        for (let i = 0; i < arrs.length; i++) {
+          //create a temporary variable then store the first array index value
+          let temp = arrs[i];
+          //create a random to use later as an index
+          let random = Math.floor(Math.random() * arrs.length);
+          //change the position of the 1st value into random position
+          arrs[i] = arrs[random];
+          //now the random position will be the 1st value which is the temp
+          arrs[random] = temp;
+          //Conclusion: function generate random number for index or position then subsitute value of 1st index and the random index or position
+        }
+        return arrs;
+      }
+    </script>
+  </body>
+</html>

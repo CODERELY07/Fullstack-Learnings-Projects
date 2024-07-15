@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const book = {
+            title:"JavaScript",
+            author: "unknown"
+        }
+        function info(year){
+           console.log(this.title + " and was written by " + this.author + " was release in " + year);
+        }
+        
+        info.apply(book, ["9999"]);
+        info.call(book,"1997");
+        const bindInfo = info.bind(book,'1999');
+
+        bindInfo();
+        
+    </script>
+</body>
+</html>

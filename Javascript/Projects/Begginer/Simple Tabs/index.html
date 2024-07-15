@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Tabs</title>
+    <script src="script.js" defer></script>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      [data-tab-content] {
+        display: none;
+      }
+      .active[data-tab-content] {
+        display: block;
+      }
+      .tabs {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        margin: 0;
+        font-size: 20px;
+        padding: 0;
+        border-bottom: 1px solid black;
+      }
+      .tab {
+        cursor: pointer;
+        padding: 10px;
+      }
+      .tab.active {
+        background-color: #ccc;
+      }
+      .tab:hover {
+        background-color: #aaa;
+      }
+      .tab-content {
+        margin: 0 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="tabs">
+      <li data-tab-target="#home" class="active tab">Home</li>
+      <li data-tab-target="#pricing" class="tab">Pricing</li>
+      <li data-tab-target="#about" class="tab">About</li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="home" data-tab-content class="active">
+        <h1>home</h1>
+        <p>this is the home</p>
+      </div>
+      <div id="pricing" data-tab-content>
+        <h1>Pricing</h1>
+        <p>Some information on pricing</p>
+      </div>
+      <div id="about" data-tab-content>
+        <h1>About</h1>
+        <p>this is the Pricing</p>
+      </div>
+    </div>
+  </body>
+</html>

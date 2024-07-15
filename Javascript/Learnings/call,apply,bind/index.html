@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Define a JavaScript object 'book' with properties 'title' and 'author'.
+        const book = {
+            title: "JavaScript",
+            author: "unknown"
+        }
+
+        // Define a function 'info' that logs information about a book.
+        function info(year) {
+            // 'this' refers to the context passed via apply, call, or bind methods.
+            console.log(this.title + " and was written by " + this.author + " was released in " + year);
+        }
+        
+        // Using apply method to invoke 'info' with 'book' as context and passing "9999" as argument.
+        info.apply(book, ["9999"]); // Output: JavaScript and was written by unknown was released in 9999
+
+        // Using call method to invoke 'info' with 'book' as context and passing "1997" as argument.
+        info.call(book, "1997"); // Output: JavaScript and was written by unknown was released in 1997
+
+        // Using bind method to create a new function 'bindInfo' with 'book' as context and "1999" as argument.
+        const bindInfo = info.bind(book, '1999');
+
+        // Invoking the bound function 'bindInfo'.
+        bindInfo(); // Output: JavaScript and was written by unknown was released in 1999
+    </script>
+</body>
+</html>

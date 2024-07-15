@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //local Storage
+        //add item
+        localStorage.setItem("name","bob");
+
+        //remove item
+        localStorage.removeItem('name')
+        //get item
+        console.log(localStorage.getItem('name'));
+
+        //Session Storage
+        sessionStorage.setItem('name','John');
+        sessionStorage.removeItem('name');
+        console.log(sessionStorage.getItem("name"));
+
+        //to overwrite values that exist just setItem again
+
+        //Cookies
+        document.cookie = 'name=mark;expires=' + new Date(2025,0,1).toUTCString(); 
+
+        document.cookie = 'lastName=Lom;expires=' + new Date(2025,0,1).toUTCString(); 
+
+        console.log(document.cookie);
+    </script>
+</body>
+</html>

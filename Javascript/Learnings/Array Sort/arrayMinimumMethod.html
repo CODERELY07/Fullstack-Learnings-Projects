@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const score = [100,56,21,12,300];
+        let minScores = (points) =>{
+            let len = points.length;
+            let min = Infinity;
+
+            while(len--){
+                if(points[len] < min){
+                    min = points[len];
+                }
+            }
+            return min;
+        }
+        console.log(minScores(score));
+
+        let maxScores = (points) =>{
+            let len = points.length;
+            let min = -Infinity;
+
+            while(len--){
+                if(points[len] > min){
+                    min = points[len];
+                }
+            }
+            return min;
+        }
+        console.log(maxScores(score));
+    </script>
+</body>
+</html>
